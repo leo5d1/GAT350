@@ -37,8 +37,7 @@ namespace c14
 
 		int flags = (fullscreen) ? SDL_WINDOW_FULLSCREEN : (SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
-		m_window = SDL_CreateWindow(name, 100, 100, width, height, SDL_WINDOW_OPENGL
-			| flags);
+		m_window = SDL_CreateWindow(name, 100, 100, width, height, SDL_WINDOW_OPENGL | flags);
 
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
@@ -58,7 +57,7 @@ namespace c14
 
 	void Renderer::BeginFrame()
 	{
-		glClearColor(0.53f, 0.81f, 0.98f, 1);
+		glClearColor(0, 0, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 	
