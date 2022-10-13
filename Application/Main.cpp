@@ -5,6 +5,7 @@ float points[] = {
   -0.5f, -0.5f,  0.0f,
   -0.5f,  0.5f,  0.0f,
    0.5f,  0.5f,  0.0f,
+
    0.5f, -0.5f,  0.0f,
   -0.5f, -0.5f,  0.0f,
    0.5f,  0.5f,  0.0f
@@ -19,15 +20,30 @@ glm::vec3 colors[] = {
 	{1, 0, 0}
 };
 
+glm::vec2 texcoords[]{
+	{0, 0},
+	{0, 1},
+	{1, 1},
+	{1, 0},
+	{0, 0},
+	{1, 1}
+};
+
 int main(int argc, char** argv)
 {
+	LOG("Application Started...");
+
 	c14::InitializeMemory();
 	c14::SetFilePath("../Assets");
 
 	c14::Engine::Instance().Initialize();
 	c14::Engine::Instance().Register();
 
+	LOG("Engine Initialized...");
+
 	c14::g_renderer.CreateWindow("Neumont", 800, 600, 0);
+
+	LOG("Window Initialized...");
 
 	// create vertex buffer
 	GLuint pvbo = 0;
@@ -40,6 +56,11 @@ int main(int argc, char** argv)
 	glGenBuffers(1, &cvbo);
 	glBindBuffer(GL_ARRAY_BUFFER, cvbo);
 	glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(glm::vec3), colors, GL_STATIC_DRAW);
+
+	GLuint tvbo = 0;
+	glGenBuffers(1, &tvbo);
+	glBindBuffer(GL_ARRAY_BUFFER, tvbo);
+	glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(glm::vec2), texcoords, GL_STATIC_DRAW);
 
 	// create vertex array
 	GLuint vao = 0;
@@ -54,6 +75,10 @@ int main(int argc, char** argv)
 	glBindBuffer(GL_ARRAY_BUFFER, cvbo);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 
+	glEnableVertexAttribArray(2);
+	glBindBuffer(GL_ARRAY_BUFFER, tvbo);
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 0, NULL);
+
 	// create shader
 	std::shared_ptr<c14::Shader> vs = c14::g_resources.Get<c14::Shader>("Shaders/basic.vert", GL_VERTEX_SHADER);
 	std::shared_ptr<c14::Shader> fs = c14::g_resources.Get<c14::Shader>("Shaders/basic.frag", GL_FRAGMENT_SHADER);
@@ -64,6 +89,11 @@ int main(int argc, char** argv)
 	glAttachShader(program, fs->m_shader);
 	glLinkProgram(program);
 	glUseProgram(program);
+
+	// create texture
+	std::shared_ptr<c14::Texture> texture1 = c14::g_resources.Get<c14::Texture>("Textures/llama.jpg");
+	std::shared_ptr<c14::Texture> texture2 = c14::g_resources.Get<c14::Texture>("Textures/wood.png");
+	texture2->Bind();
 
 	GLint uniform1 = glGetUniformLocation(program, "scale");
 	GLint uniform2 = glGetUniformLocation(program, "tint");
