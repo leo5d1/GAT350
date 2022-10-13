@@ -41,6 +41,8 @@
 #include "Renderer/Model.h"
 #include "Renderer/Shader.h"
 
+#include "glm/glm.hpp"
+
 #include <memory>
 #include <vector>
 #include <list>

@@ -9,7 +9,8 @@ float points[] = {
   -0.5f, -0.5f,  0.0f,
    0.5f,  0.5f,  0.0f
 };
-c14::Vector3 colors[] = {
+
+glm::vec3 colors[] = {
 	{0, 0, 1},
 	{0, 1, 1},
 	{1, 0, 1},
@@ -38,7 +39,7 @@ int main(int argc, char** argv)
 	GLuint cvbo = 0;
 	glGenBuffers(1, &cvbo);
 	glBindBuffer(GL_ARRAY_BUFFER, cvbo);
-	glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(c14::Vector3), colors, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(glm::vec3), colors, GL_STATIC_DRAW);
 
 	// create vertex array
 	GLuint vao = 0;
@@ -57,13 +58,6 @@ int main(int argc, char** argv)
 	std::shared_ptr<c14::Shader> vs = c14::g_resources.Get<c14::Shader>("Shaders/basic.vert", GL_VERTEX_SHADER);
 	std::shared_ptr<c14::Shader> fs = c14::g_resources.Get<c14::Shader>("Shaders/basic.frag", GL_FRAGMENT_SHADER);
 
-	/*GLuint vs = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vs, 1, &vertex_shader, NULL);
-	glCompileShader(vs);
-	GLuint fs = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fs, 1, &fragment_shader, NULL);
-	glCompileShader(fs);*/
-
 	// create program
 	GLuint program = glCreateProgram();
 	glAttachShader(program, vs->m_shader);
@@ -71,12 +65,25 @@ int main(int argc, char** argv)
 	glLinkProgram(program);
 	glUseProgram(program);
 
+	GLint uniform1 = glGetUniformLocation(program, "scale");
+	GLint uniform2 = glGetUniformLocation(program, "tint");
+	GLint uniform3 = glGetUniformLocation(program, "transform");
+
+	glm::mat4 mx{ 1 };
+
 	bool quit = false;
 	while (!quit)
 	{
 		c14::Engine::Instance().Update();
 
 		if (c14::g_inputSystem.GetKeyState(c14::key_escape) == c14::InputSystem::State::Pressed) quit = true;
+
+		glUniform1f(uniform1, std::sin(c14::g_time.time));
+
+		glUniform3f(uniform2, std::sin(c14::g_time.time * 5), std::sin(c14::g_time.time * 10), std::sin(c14::g_time.time * 20));
+
+		mx = glm::eulerAngleXYZ(0.0f, 0.0f, c14::g_time.time);
+		glUniformMatrix4fv(uniform3, 1, GL_FALSE, glm::value_ptr(mx));
 
 		c14::g_renderer.BeginFrame();
 
