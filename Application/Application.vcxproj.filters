@@ -28,5 +28,8 @@
     <None Include="..\Build\Assets\Shaders\basic.prog">
       <Filter>Resources\Shaders</Filter>
     </None>
+    <None Include="..\Build\Assets\Materials\box.mtrl">
+      <Filter>Resources\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
