@@ -1,4 +1,5 @@
 #include "Engine.h"
+#include <vector>
 #include <iostream>
 
 float vertices[] = {
@@ -84,8 +85,23 @@ int main(int argc, char** argv)
 	glm::mat4 model{ 1 };
 	glm::mat4 projection = glm::perspective(45.0f, c14::g_renderer.GetWidth() / (float)c14::g_renderer.GetHeight(), 0.01f, 100.0f);
 
-	glm::vec3 cameraPosition{ 0, 0, 1 };
+	glm::vec3 cameraPosition{ 0, 0, 10 };
 	float speed = 3;
+
+	std::vector<c14::Transform> transforms;
+	
+	for (int i = 0; i < 100; i++)
+	{
+		transforms.push_back({ {c14::Randomf(-5, 5), c14::Randomf(-5, 5), c14::Randomf(-5, 5) }, {c14::Randomf(360), c14::Randomf(360), c14::Randomf(360)} });
+	}
+
+	/*c14::Transform transforms[] =
+	{
+		{ { 0, 0,  0}, {45, 90, 0} },
+		{ { 1, 2,  0}, {0, 90, 45} },
+		{ { 0, 4, -3}, {0, 90, 30} },
+		{ {-2, 0,  3}, {90, 90, 0} },
+	};*/
 
 	bool quit = false;
 	while (!quit)
@@ -93,25 +109,44 @@ int main(int argc, char** argv)
 		c14::Engine::Instance().Update();
 
 		if (c14::g_inputSystem.GetKeyState(c14::key_escape) == c14::InputSystem::State::Pressed) quit = true;
-
+		
 		// add input to move camera
-		if (c14::g_inputSystem.GetKeyState(c14::key_a) == c14::InputSystem::State::Held) cameraPosition.x -= speed * c14::g_time.deltaTime;
 		if (c14::g_inputSystem.GetKeyState(c14::key_d) == c14::InputSystem::State::Held) cameraPosition.x += speed * c14::g_time.deltaTime;
+		if (c14::g_inputSystem.GetKeyState(c14::key_a) == c14::InputSystem::State::Held) cameraPosition.x -= speed * c14::g_time.deltaTime;
 		if (c14::g_inputSystem.GetKeyState(c14::key_w) == c14::InputSystem::State::Held) cameraPosition.y += speed * c14::g_time.deltaTime;
 		if (c14::g_inputSystem.GetKeyState(c14::key_s) == c14::InputSystem::State::Held) cameraPosition.y -= speed * c14::g_time.deltaTime;
-		if (c14::g_inputSystem.GetKeyState(c14::key_LShift) == c14::InputSystem::State::Held) cameraPosition.z -= speed * c14::g_time.deltaTime;
 		if (c14::g_inputSystem.GetKeyState(c14::key_LCtrl) == c14::InputSystem::State::Held) cameraPosition.z += speed * c14::g_time.deltaTime;
+		if (c14::g_inputSystem.GetKeyState(c14::key_LShift) == c14::InputSystem::State::Held) cameraPosition.z -= speed * c14::g_time.deltaTime;
 
 
 		glm::mat4 view = glm::lookAt(cameraPosition, cameraPosition + glm::vec3{ 0, 0, -1 }, glm::vec3{ 0, 1, 0 });
+		/*
+		if (c14::g_inputSystem.GetKeyState(c14::key_space) == c14::InputSystem::State::Held)
+		{
+			model = glm::eulerAngleXYZ(c14::g_time.time, c14::g_time.time, c14::g_time.time);
+		}
+		else 
+		{
+			model = glm::eulerAngleXYZ(0.0f, 0.0f, 0.0f);
+		}
+		*/
 
-		model = glm::eulerAngleXYZ(0.0f, c14::g_time.time, 0.0f);
-		glm::mat4 mvp = projection * view * model;
-		material->GetProgram()->SetUniform("mvp", mvp);
 
 		c14::g_renderer.BeginFrame();
 
-		vb->Draw();
+		
+		for (size_t i = 0; i < transforms.size(); i++)
+		{
+			transforms[i].rotation += glm::vec3{ 0, 90 * c14::g_time.deltaTime, 0 };
+
+			glm::mat4 mvp = projection * view * (glm::mat4)transforms[i];
+			material->GetProgram()->SetUniform("mvp", mvp);
+
+			
+			vb->Draw();
+		}
+		
+
 
 		c14::g_renderer.EndFrame();
 	}

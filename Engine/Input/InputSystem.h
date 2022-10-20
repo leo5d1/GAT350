@@ -64,6 +64,8 @@ namespace c14
 	extern const uint32_t key_a;
 	extern const uint32_t key_s;
 	extern const uint32_t key_d;
+	extern const uint32_t key_q;
+	extern const uint32_t key_e;
 	extern const uint32_t key_LShift;
 	extern const uint32_t key_LCtrl;
 }
