@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "Component.h"
+#include "Math/Transform.h"
 #include <vector>
 
 namespace c14

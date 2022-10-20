@@ -11,8 +11,9 @@ namespace c14
 		tag = other.tag;
 		lifespan = other.lifespan;
 		m_transform = other.m_transform;
+
 		m_scene = other.m_scene;
-		
+
 		for (auto& component : other.m_components)
 		{
 			auto clone = std::unique_ptr<Component>((Component*)component->Clone().release());

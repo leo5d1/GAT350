@@ -12,10 +12,10 @@ namespace c14
     void CameraComponent::Update()
     {
         // create camera view matrix 
-        Matrix3x3 mxTranslation = Matrix3x3::CreateTranslation(-m_owner->m_transform.position);
-        Matrix3x3 mxRotation = Matrix3x3::CreateRotation(-math::DegToRad(m_owner->m_transform.rotation));
+        //Matrix3x3 mxTranslation = Matrix3x3::CreateTranslation(-m_owner->m_transform.position);
+        //Matrix3x3 mxRotation = Matrix3x3::CreateRotation(-math::DegToRad(m_owner->m_transform.rotation));
 
-        m_view = mxTranslation * mxRotation;
+        //m_view = mxTranslation * mxRotation;
 
         g_renderer.SetViewMatrix(m_view);
     }

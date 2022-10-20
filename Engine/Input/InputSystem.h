@@ -48,17 +48,22 @@ namespace c14
 		std::array<uint8_t, 3> m_prevMouseButtonState;
 	};
 
+	extern const uint32_t button_left;
+	extern const uint32_t button_middle;
+	extern const uint32_t button_right;
+
 	extern const uint32_t key_space;
+	extern const uint32_t key_escape;
+	extern const uint32_t key_enter;
 	extern const uint32_t key_up;
 	extern const uint32_t key_down;
 	extern const uint32_t key_left;
 	extern const uint32_t key_right;
-	extern const uint32_t key_escape;
-	extern const uint32_t key_enter;
-	extern const uint32_t key_q;
-	extern const uint32_t key_e;
 
-	extern const uint32_t button_left;
-	extern const uint32_t button_middle;
-	extern const uint32_t button_right;
+	extern const uint32_t key_w;
+	extern const uint32_t key_a;
+	extern const uint32_t key_s;
+	extern const uint32_t key_d;
+	extern const uint32_t key_LShift;
+	extern const uint32_t key_LCtrl;
 }
