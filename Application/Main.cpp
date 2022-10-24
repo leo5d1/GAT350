@@ -75,6 +75,8 @@ int main(int argc, char** argv)
 	program->Link();
 	program->Use();
 
+	auto m = neu::g_resources.Get<neu::Model>("models/ogre.obj");
+
 	// create material 
 	std::shared_ptr<c14::Material> material = c14::g_resources.Get<c14::Material>("materials/box.mtrl");
 	material->Bind();
@@ -134,10 +136,16 @@ int main(int argc, char** argv)
 
 		c14::g_renderer.BeginFrame();
 
-		
+		/*
 		for (size_t i = 0; i < transforms.size(); i++)
 		{
 			transforms[i].rotation += glm::vec3{ 0, 90 * c14::g_time.deltaTime, 0 };
+
+			if (c14::g_inputSystem.GetKeyState(c14::key_space) == c14::InputSystem::State::Held)
+			{
+				transforms[i].position += glm::vec3{ c14::Randomf(-1, 1) * c14::g_time.deltaTime, c14::Randomf(-1, 1) * c14::g_time.deltaTime, c14::Randomf(-1, 1) * c14::g_time.deltaTime };
+				//transforms[i].position +=c14::Randomf(-10, 10);
+			}
 
 			glm::mat4 mvp = projection * view * (glm::mat4)transforms[i];
 			material->GetProgram()->SetUniform("mvp", mvp);
@@ -145,8 +153,8 @@ int main(int argc, char** argv)
 			
 			vb->Draw();
 		}
-		
-
+		*/
+		m->m_vertexBuffer.Draw();
 
 		c14::g_renderer.EndFrame();
 	}

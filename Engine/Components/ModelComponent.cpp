@@ -29,6 +29,6 @@ namespace c14
 	void ModelComponent::Draw(Renderer& renderer)
 	{
 		//renderer.Draw(m_texture, m_owner->m_transform);
-		m_model->Draw(renderer, m_owner->m_transform);
+		//m_model->Draw(renderer, m_owner->m_transform);
 	}
 }

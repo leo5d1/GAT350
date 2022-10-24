@@ -83,7 +83,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -91,8 +91,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;fmod_vc.lib;SDL2_image.lib;box2d.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Third Party\fmod\core\lib\$(PlatformTarget);$(SolutionDir)Third Party\box2d\lib;$(SolutionDir)Third Party\SDL2-2.0.22\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc143-mtd.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;fmod_vc.lib;SDL2_image.lib;box2d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Third Party\assimp\lib\$(Configuration);$(SolutionDir)Third Party\fmod\core\lib\$(PlatformTarget);$(SolutionDir)Third Party\box2d\lib;$(SolutionDir)Third Party\SDL2-2.0.22\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,7 +104,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -114,8 +114,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;fmod_vc.lib;SDL2_image.lib;box2d.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Third Party\fmod\core\lib\$(PlatformTarget);$(SolutionDir)Third Party\box2d\lib;$(SolutionDir)Third Party\SDL2-2.0.22\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc143-mtd.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;fmod_vc.lib;SDL2_image.lib;box2d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Third Party\assimp\lib\$(Configuration);$(SolutionDir)Third Party\fmod\core\lib\$(PlatformTarget);$(SolutionDir)Third Party\box2d\lib;$(SolutionDir)Third Party\SDL2-2.0.22\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -124,7 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -133,10 +133,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;fmod_vc.lib;SDL2_image.lib;box2d.lib</AdditionalDependencies>
+      <AdditionalDependencies>assimp-vc143-mtd.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;fmod_vc.lib;SDL2_image.lib;box2d.lib</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>$(SolutionDir)Third Party\fmod\core\lib\$(PlatformTarget);$(SolutionDir)Third Party\box2d\lib;$(SolutionDir)Third Party\SDL2-2.0.22\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Third Party\assimp\lib\$(Configuration);$(SolutionDir)Third Party\fmod\core\lib\$(PlatformTarget);$(SolutionDir)Third Party\box2d\lib;$(SolutionDir)Third Party\SDL2-2.0.22\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -148,7 +148,7 @@
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -158,8 +158,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;fmod_vc.lib;SDL2_image.lib;box2d.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Third Party\fmod\core\lib\$(PlatformTarget);$(SolutionDir)Third Party\box2d\lib;$(SolutionDir)Third Party\SDL2-2.0.22\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc143-mtd.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;fmod_vc.lib;SDL2_image.lib;box2d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Third Party\assimp\lib\$(Configuration);$(SolutionDir)Third Party\fmod\core\lib\$(PlatformTarget);$(SolutionDir)Third Party\box2d\lib;$(SolutionDir)Third Party\SDL2-2.0.22\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>

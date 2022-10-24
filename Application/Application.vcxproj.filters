@@ -12,6 +12,9 @@
     <Filter Include="Resources\Shaders">
       <UniqueIdentifier>{472d120c-c984-47ff-be45-8cdd63f590b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\Materials">
+      <UniqueIdentifier>{9ac3c106-3f64-4dbc-b499-8f85652aedac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -29,7 +32,10 @@
       <Filter>Resources\Shaders</Filter>
     </None>
     <None Include="..\Build\Assets\Materials\box.mtrl">
-      <Filter>Resources\Shaders</Filter>
+      <Filter>Resources\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\ogre.mtrl">
+      <Filter>Resources\Materials</Filter>
     </None>
   </ItemGroup>
 </Project>
