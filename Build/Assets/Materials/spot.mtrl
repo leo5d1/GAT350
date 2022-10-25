@@ -1,0 +1,4 @@
+{
+  "program": "Shaders/basic.prog",
+  "texture": "Textures/spot.png"
+}

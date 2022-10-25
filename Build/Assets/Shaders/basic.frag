@@ -1,6 +1,6 @@
 #version 430 core
 
-in vec3 color;
+//in vec3 color;
 in vec2 texcoord;
 
 out vec4 fcolor;

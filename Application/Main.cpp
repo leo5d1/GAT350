@@ -75,27 +75,32 @@ int main(int argc, char** argv)
 	program->Link();
 	program->Use();
 
-	auto m = neu::g_resources.Get<neu::Model>("models/ogre.obj");
+	auto ogre = c14::g_resources.Get<c14::Model>("models/ogre.obj");
+	auto spot = c14::g_resources.Get<c14::Model>("models/spot.obj");
 
 	// create material 
-	std::shared_ptr<c14::Material> material = c14::g_resources.Get<c14::Material>("materials/box.mtrl");
+	//std::shared_ptr<c14::Material> material = c14::g_resources.Get<c14::Material>("materials/ogre.mtrl");
+	std::shared_ptr<c14::Material> material = c14::g_resources.Get<c14::Material>("materials/spot.mtrl");
 	material->Bind();
 
  	material->GetProgram()->SetUniform("scale", 0.5f);
 	material->GetProgram()->SetUniform("tint", glm::vec3{ 1, 0, 0 });
-
+	
 	glm::mat4 model{ 1 };
 	glm::mat4 projection = glm::perspective(45.0f, c14::g_renderer.GetWidth() / (float)c14::g_renderer.GetHeight(), 0.01f, 100.0f);
 
-	glm::vec3 cameraPosition{ 0, 0, 10 };
+	glm::vec3 cameraPosition{ 0, 0, 2 };
 	float speed = 3;
 
 	std::vector<c14::Transform> transforms;
-	
+	/*
 	for (int i = 0; i < 100; i++)
 	{
 		transforms.push_back({ {c14::Randomf(-5, 5), c14::Randomf(-5, 5), c14::Randomf(-5, 5) }, {c14::Randomf(360), c14::Randomf(360), c14::Randomf(360)} });
 	}
+	*/
+
+	transforms.push_back({ { 0, 0, 0}, {0, 180, 0} });
 
 	/*c14::Transform transforms[] =
 	{
@@ -122,24 +127,12 @@ int main(int argc, char** argv)
 
 
 		glm::mat4 view = glm::lookAt(cameraPosition, cameraPosition + glm::vec3{ 0, 0, -1 }, glm::vec3{ 0, 1, 0 });
-		/*
-		if (c14::g_inputSystem.GetKeyState(c14::key_space) == c14::InputSystem::State::Held)
-		{
-			model = glm::eulerAngleXYZ(c14::g_time.time, c14::g_time.time, c14::g_time.time);
-		}
-		else 
-		{
-			model = glm::eulerAngleXYZ(0.0f, 0.0f, 0.0f);
-		}
-		*/
-
 
 		c14::g_renderer.BeginFrame();
 
-		/*
 		for (size_t i = 0; i < transforms.size(); i++)
 		{
-			transforms[i].rotation += glm::vec3{ 0, 90 * c14::g_time.deltaTime, 0 };
+			//transforms[i].rotation += glm::vec3{ 0, 90 * c14::g_time.deltaTime, 0 };
 
 			if (c14::g_inputSystem.GetKeyState(c14::key_space) == c14::InputSystem::State::Held)
 			{
@@ -150,11 +143,11 @@ int main(int argc, char** argv)
 			glm::mat4 mvp = projection * view * (glm::mat4)transforms[i];
 			material->GetProgram()->SetUniform("mvp", mvp);
 
-			
-			vb->Draw();
+
+			//vb->Draw();
 		}
-		*/
-		m->m_vertexBuffer.Draw();
+		
+		ogre->m_vertexBuffer.Draw();
 
 		c14::g_renderer.EndFrame();
 	}
