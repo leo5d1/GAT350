@@ -1,5 +1,6 @@
 #pragma once
 #include "Actor.h"
+#include "Resource\Resource.h"
 #include <list>
 #include <memory>
 

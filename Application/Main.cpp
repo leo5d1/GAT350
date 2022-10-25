@@ -77,16 +77,16 @@ int main(int argc, char** argv)
 	program->Link();
 	program->Use();
 
+	//auto spot = c14::g_resources.Get<c14::Model>("models/spot.obj");
 	auto ogre = c14::g_resources.Get<c14::Model>("models/ogre.obj");
-	auto spot = c14::g_resources.Get<c14::Model>("models/spot.obj");
 
 	// create material 
 	//std::shared_ptr<c14::Material> material = c14::g_resources.Get<c14::Material>("materials/ogre.mtrl");
-	std::shared_ptr<c14::Material> material = c14::g_resources.Get<c14::Material>("materials/spot.mtrl");
-	material->Bind();
+	//std::shared_ptr<c14::Material> material = c14::g_resources.Get<c14::Material>("materials/spot.mtrl");
+	//material->Bind();
 
- 	material->GetProgram()->SetUniform("scale", 0.5f);
-	material->GetProgram()->SetUniform("tint", glm::vec3{ 1, 0, 0 });
+ 	//material->GetProgram()->SetUniform("scale", 0.5f);
+	//material->GetProgram()->SetUniform("tint", glm::vec3{ 1, 0, 0 });
 	
 	glm::mat4 model{ 1 };
 	glm::mat4 projection = glm::perspective(45.0f, c14::g_renderer.GetWidth() / (float)c14::g_renderer.GetHeight(), 0.01f, 100.0f);
