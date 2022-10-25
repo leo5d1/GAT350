@@ -1,6 +1,5 @@
-#pragma once
+#pragma once 
 #include "Framework/Component.h" 
-#include "Math/Matrix3x3.h" 
 
 namespace c14
 {
@@ -9,21 +8,19 @@ namespace c14
 	public:
 		CLASS_DECLARATION(CameraComponent)
 
-			virtual void Initialize() override;
-		virtual void Update() override;
+			void Update() override;
 
-		const Matrix3x3& GetView() { return m_view; }
 
-		void SetViewport(const Vector2& size);
-		const Matrix3x3& GetViewport() { return m_viewport; }
+		void SetPerspective(float fov, float aspectRatio, float near, float far);
+
+		const glm::mat4& GetProjection() { return m_projection; }
+		const glm::mat4& GetView() { return m_view; }
 
 		virtual bool Write(const rapidjson::Value& value) const override;
 		virtual bool Read(const rapidjson::Value& value) override;
 
 	public:
-		Vector2 viewport_size;
-
-		Matrix3x3 m_view;
-		Matrix3x3 m_viewport;
+		glm::mat4 m_projection{ 1 };
+		glm::mat4 m_view{ 1 };
 	};
 }

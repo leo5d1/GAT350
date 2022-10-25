@@ -15,6 +15,9 @@
     <Filter Include="Resources\Materials">
       <UniqueIdentifier>{9ac3c106-3f64-4dbc-b499-8f85652aedac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\Scenes">
+      <UniqueIdentifier>{34ba455f-f0c8-46f4-b50a-c501857be240}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -39,6 +42,9 @@
     </None>
     <None Include="..\Build\Assets\Materials\spot.mtrl">
       <Filter>Resources\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Scenes\basic.scn">
+      <Filter>Resources\Scenes</Filter>
     </None>
   </ItemGroup>
 </Project>

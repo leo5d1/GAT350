@@ -150,6 +150,7 @@
     <None Include="..\Build\Assets\Materials\box.mtrl" />
     <None Include="..\Build\Assets\Materials\ogre.mtrl" />
     <None Include="..\Build\Assets\Materials\spot.mtrl" />
+    <None Include="..\Build\Assets\Scenes\basic.scn" />
     <None Include="..\Build\Assets\Shaders\basic.frag" />
     <None Include="..\Build\Assets\Shaders\basic.prog" />
     <None Include="..\Build\Assets\Shaders\basic.vert" />

@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "Factory.h"
+#include "Engine.h"
 #include <iostream>
 
 namespace c14
@@ -31,6 +32,15 @@ namespace c14
 
 	void Scene::Draw(Renderer& renderer)
 	{
+		// get camera / set renderer view/projection 
+		auto camera = GetActorFromName("Camera");
+		if (camera)
+		{
+			g_renderer.SetView(camera->GetComponent<CameraComponent>() -> GetView());
+			g_renderer.SetProjection(camera->GetComponent<CameraComponent>() -> GetProjection());
+		}
+
+		// draw actors 
 		for (auto& actor : m_actors)
 		{
 			actor->Draw(renderer);
