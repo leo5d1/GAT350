@@ -56,5 +56,6 @@ namespace c14
 		REGISTER_CLASS(TilemapComponent);
 		REGISTER_CLASS(CameraComponent);
 		REGISTER_CLASS(CameraController);
+		REGISTER_CLASS(LightComponent);
 	}
 }
