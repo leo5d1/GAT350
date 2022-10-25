@@ -63,19 +63,7 @@ int main(int argc, char** argv)
 	LOG("Window Initialized...");
 
 	// load scene 
-	auto scene = std::make_unique<c14::Scene>();
-
-	rapidjson::Document document;
-	bool success = c14::json::Load("scenes/basic.scn", document);
-	if (!success)
-	{
-		LOG("error loading scene file %s.", "scenes/basic.scn");
-	}
-	else
-	{
-		scene->Read(document);
-		scene->Initialize();
-	}
+	auto scene = c14::g_resources.Get<c14::Scene>("scenes/basic.scn");
 
 	// create vertex buffer
 	std::shared_ptr<c14::VertexBuffer> vb = c14::g_resources.Get<c14::VertexBuffer>("box");
@@ -107,22 +95,8 @@ int main(int argc, char** argv)
 	float speed = 3;
 
 	std::vector<c14::Transform> transforms;
-	/*
-	for (int i = 0; i < 100; i++)
-	{
-		transforms.push_back({ {c14::Randomf(-5, 5), c14::Randomf(-5, 5), c14::Randomf(-5, 5) }, {c14::Randomf(360), c14::Randomf(360), c14::Randomf(360)} });
-	}
-	*/
 
 	transforms.push_back({ { 0, 0, 0}, {0, 180, 0} });
-
-	/*c14::Transform transforms[] =
-	{
-		{ { 0, 0,  0}, {45, 90, 0} },
-		{ { 1, 2,  0}, {0, 90, 45} },
-		{ { 0, 4, -3}, {0, 90, 30} },
-		{ {-2, 0,  3}, {90, 90, 0} },
-	};*/
 
 	bool quit = false;
 	while (!quit)
@@ -130,15 +104,12 @@ int main(int argc, char** argv)
 		c14::Engine::Instance().Update();
 
 		if (c14::g_inputSystem.GetKeyState(c14::key_escape) == c14::InputSystem::State::Pressed) quit = true;
-		
-		// add input to move camera
-		if (c14::g_inputSystem.GetKeyState(c14::key_d) == c14::InputSystem::State::Held) cameraPosition.x += speed * c14::g_time.deltaTime;
-		if (c14::g_inputSystem.GetKeyState(c14::key_a) == c14::InputSystem::State::Held) cameraPosition.x -= speed * c14::g_time.deltaTime;
-		if (c14::g_inputSystem.GetKeyState(c14::key_w) == c14::InputSystem::State::Held) cameraPosition.y += speed * c14::g_time.deltaTime;
-		if (c14::g_inputSystem.GetKeyState(c14::key_s) == c14::InputSystem::State::Held) cameraPosition.y -= speed * c14::g_time.deltaTime;
-		if (c14::g_inputSystem.GetKeyState(c14::key_LCtrl) == c14::InputSystem::State::Held) cameraPosition.z += speed * c14::g_time.deltaTime;
-		if (c14::g_inputSystem.GetKeyState(c14::key_LShift) == c14::InputSystem::State::Held) cameraPosition.z -= speed * c14::g_time.deltaTime;
 
+		auto actor = scene->GetActorFromName("Ogre");
+		if (actor)
+		{
+			actor->m_transform.rotation.y += c14::g_time.deltaTime * 90.0f;
+		}
 
 		glm::mat4 view = glm::lookAt(cameraPosition, cameraPosition + glm::vec3{ 0, 0, -1 }, glm::vec3{ 0, 1, 0 });
 

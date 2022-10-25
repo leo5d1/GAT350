@@ -10,13 +10,15 @@ namespace c14
 	class Renderer;
 	class Game;
 
-	class Scene : public GameObject, public ISerializable
+	class Scene : public GameObject, public ISerializable, public Resource
 	{
 	public:
 		Scene() = default;
 		Scene(Game* game) : m_game{ game } {}
 		Scene(const Scene& other) {}
 		~Scene() = default;
+
+		virtual bool Create(const std::string name, ...) override;
 
 		CLASS_DECLARATION(Scene)
 
@@ -44,7 +46,6 @@ namespace c14
 	private:
 		Game* m_game;
 		std::list<std::unique_ptr<Actor>> m_actors;
-
 	};
 
 	template<typename T>

@@ -1,19 +1,18 @@
 #version 430 core 
-in layout(location = 0) vec3 vposition; // 0
-//in layout(location = 1) vec3 vcolor; // 1
-in layout(location = 1) vec2 vtexcoord; // 2
-
-out vec3 color;
+ 
+in layout(location = 0) vec3 vposition;
+in layout(location = 1) vec2 vtexcoord;
+ 
 out vec2 texcoord;
-
-uniform float scale;
-uniform mat4 mvp;
-
+ 
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+ 
 void main()
 {
-	//color = vcolor;
 	texcoord = vtexcoord;
-
-	vec4 tposition = mvp * vec4(vposition * scale, 1.0);
-	gl_Position = tposition;
+ 
+	mat4 mvp = projection * view * model;
+	gl_Position = mvp * vec4(vposition, 1.0);
 }
