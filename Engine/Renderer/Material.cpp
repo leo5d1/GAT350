@@ -30,9 +30,7 @@ namespace c14
 		}
 
 		// read colors 
-		READ_DATA(document, ambient);
-		READ_DATA(document, diffuse);
-		READ_DATA(document, specular);
+		READ_DATA(document, color);
 		READ_DATA(document, shininess);
 
 		return true;

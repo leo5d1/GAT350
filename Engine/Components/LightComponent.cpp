@@ -13,9 +13,7 @@ namespace c14
 		// set programs light properties
 		for (auto& program : programs)
 		{
-			program->SetUniform("light.ambient", ambient);
-			program->SetUniform("light.diffuse", diffuse);
-			program->SetUniform("light.specular", specular);
+			program->SetUniform("light.color", color);
 			program->SetUniform("light.position", position);
 		}
 	}
@@ -27,9 +25,7 @@ namespace c14
 
 	bool LightComponent::Read(const rapidjson::Value& value)
 	{
-		READ_DATA(value, ambient);
-		READ_DATA(value, diffuse);
-		READ_DATA(value, specular);
+		READ_DATA(value, color);
 
 		return true;
 	}

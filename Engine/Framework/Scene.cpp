@@ -8,10 +8,10 @@ namespace c14
 	bool Scene::Create(const std::string name, ...)
 	{
 		rapidjson::Document document;
-		bool success = c14::json::Load("scenes/basic.scn", document);
+		bool success = c14::json::Load(name, document);
 		if (!success)
 		{
-			LOG("error loading scene file %s.", "scenes/basic.scn");
+			LOG("error loading scene file %s.", name);
 			return false;
 		}
 		else

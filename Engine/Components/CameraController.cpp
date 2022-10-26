@@ -17,6 +17,12 @@ namespace c14
 
 		if (g_inputSystem.GetKeyState(key_s) == InputSystem::State::Held)
 			m_owner->m_transform.position.y -= speed * g_time.deltaTime;
+
+		if (g_inputSystem.GetKeyState(key_q) == InputSystem::State::Held)
+			m_owner->m_transform.position.z += speed * g_time.deltaTime;
+
+		if (g_inputSystem.GetKeyState(key_e) == InputSystem::State::Held)
+			m_owner->m_transform.position.z -= speed * g_time.deltaTime;
 	}
 
 	bool CameraController::Write(const rapidjson::Value& value) const

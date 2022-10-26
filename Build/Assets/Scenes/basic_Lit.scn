@@ -33,8 +33,8 @@
       "name": "Light",
       "transform": {
         "position": [
-          5,
-          5,
+          2,
+          0,
           5
 
         ]
@@ -42,20 +42,10 @@
       "components": [
         {
           "type": "LightComponent",
-          "ambient": [
-            0.2,
-            0.2,
-            0.2
-          ],
-          "diffuse": [
-            1,
-            1,
-            1
-          ],
-          "specular": [
-            1,
-            1,
-            1
+          "color": [
+            1.0,
+            1.0,
+            1.0
           ]
         }
       ]

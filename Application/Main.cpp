@@ -14,12 +14,12 @@ int main(int argc, char** argv)
 
 	LOG("Engine Initialized...");
 
-	c14::g_renderer.CreateWindow("c14", 800, 600, 0);
+	c14::g_renderer.CreateWindow("Gamer", 800, 600, 0);
 
 	LOG("Window Initialized...");
 
 	// load scene 
-	auto scene = c14::g_resources.Get<c14::Scene>("scenes/basic_Lit.scn");
+	auto scene = c14::g_resources.Get<c14::Scene>("Scenes/basic_Lit.scn");
 
 	bool quit = false;
 	while (!quit)
