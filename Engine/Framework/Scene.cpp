@@ -5,6 +5,24 @@
 
 namespace c14
 {
+	bool Scene::Create(const std::string name, ...)
+	{
+		rapidjson::Document document;
+		bool success = c14::json::Load("scenes/basic.scn", document);
+		if (!success)
+		{
+			LOG("error loading scene file %s.", "scenes/basic.scn");
+			return false;
+		}
+		else
+		{
+			Read(document);
+			Initialize();
+			return true;
+		}
+
+	}
+
 	void Scene::Initialize()
 	{
 		for (auto& actor : m_actors)
@@ -103,8 +121,6 @@ namespace c14
 
 		m_actors.clear();
 	}
-
-	
 
 }
 
