@@ -46,6 +46,8 @@ namespace c14
 			AddShader(fshader);
 		}
 
+		Link();
+
 		return true;
 	}
 
