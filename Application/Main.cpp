@@ -63,7 +63,7 @@ int main(int argc, char** argv)
 	LOG("Window Initialized...");
 
 	// load scene 
-	auto scene = c14::g_resources.Get<c14::Scene>("scenes/basic_Lit.scn");
+	auto scene = c14::g_resources.Get<c14::Scene>("scenes/basic.scn");
 
 	// create vertex buffer
 	std::shared_ptr<c14::VertexBuffer> vb = c14::g_resources.Get<c14::VertexBuffer>("box");
@@ -73,12 +73,12 @@ int main(int argc, char** argv)
 	vb->SetAttribute(2, 2, 8 * sizeof(float), 6 * sizeof(float));
 
 	// create program
-	std::shared_ptr<c14::Program> program = c14::g_resources.Get<c14::Program>("Shaders/basic.prog", GL_PROGRAM);
-	program->Link();
-	program->Use();
+	//std::shared_ptr<c14::Program> program = c14::g_resources.Get<c14::Program>("Shaders/basic.prog", GL_PROGRAM);
+	//program->Link();
+	//program->Use();
 
 	//auto spot = c14::g_resources.Get<c14::Model>("models/spot.obj");
-	auto ogre = c14::g_resources.Get<c14::Model>("models/ogre.obj");
+	//auto ogre = c14::g_resources.Get<c14::Model>("models/ogre.obj");
 
 	// create material 
 	//std::shared_ptr<c14::Material> material = c14::g_resources.Get<c14::Material>("materials/ogre.mtrl");
