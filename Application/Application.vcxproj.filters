@@ -58,5 +58,20 @@
     <None Include="..\Build\Assets\Scenes\basic_Lit.scn">
       <Filter>Resources\Scenes</Filter>
     </None>
+    <None Include="..\Build\Assets\Shaders\basic_phong.frag">
+      <Filter>Resources\Shaders</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\basic_phong.prog">
+      <Filter>Resources\Shaders</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\basic_phong.vert">
+      <Filter>Resources\Shaders</Filter>
+    </None>
+    <None Include="..\Build\Assets\Scenes\assignment.scn">
+      <Filter>Resources\Scenes</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\grass.mtrl">
+      <Filter>Resources\Materials</Filter>
+    </None>
   </ItemGroup>
 </Project>

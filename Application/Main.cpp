@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 	LOG("Window Initialized...");
 
 	// load scene 
-	auto scene = c14::g_resources.Get<c14::Scene>("Scenes/basic_Lit.scn");
+	auto scene = c14::g_resources.Get<c14::Scene>("Scenes/assignment.scn");
 
 	bool quit = false;
 	while (!quit)

@@ -2,11 +2,11 @@
   "actors": [
     {
       "type": "Actor",
-      "name": "Ogre",
+      "name": "Floor",
       "transform": {
         "position": [
           0,
-          0,
+          -1,
           0
         ],
         "scale": [
@@ -16,15 +16,43 @@
         ],
         "rotation": [
           0,
-          0,
+          180,
           0
         ]
       },
       "components": [
         {
           "type": "ModelComponent",
-          "model_name": "Models/ogre.obj",
-          "material_name": "Materials/ogre.mtrl"
+          "model_name": "Models/plane.obj",
+          "material_name": "Materials/grass.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Spot",
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/spot.obj",
+          "material_name": "Materials/spot.mtrl"
         }
       ]
     },
@@ -34,8 +62,8 @@
       "transform": {
         "position": [
           0,
-          0,
-          5
+          5,
+          0
 
         ]
       },

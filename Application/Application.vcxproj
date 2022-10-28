@@ -148,8 +148,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Build\Assets\Materials\box.mtrl" />
+    <None Include="..\Build\Assets\Materials\grass.mtrl" />
     <None Include="..\Build\Assets\Materials\ogre.mtrl" />
     <None Include="..\Build\Assets\Materials\spot.mtrl" />
+    <None Include="..\Build\Assets\Scenes\assignment.scn" />
     <None Include="..\Build\Assets\Scenes\basic.scn" />
     <None Include="..\Build\Assets\Scenes\basic_Lit.scn" />
     <None Include="..\Build\Assets\Shaders\basic.frag" />
@@ -158,6 +160,9 @@
     <None Include="..\Build\Assets\Shaders\basic_Lit.frag" />
     <None Include="..\Build\Assets\Shaders\basic_Lit.prog" />
     <None Include="..\Build\Assets\Shaders\basic_Lit.vert" />
+    <None Include="..\Build\Assets\Shaders\basic_phong.frag" />
+    <None Include="..\Build\Assets\Shaders\basic_phong.prog" />
+    <None Include="..\Build\Assets\Shaders\basic_phong.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

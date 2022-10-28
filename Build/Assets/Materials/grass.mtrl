@@ -1,6 +1,6 @@
 {
   "program": "Shaders/basic_phong.prog",
-  "texture": "Textures/spot.png",
+  "texture": "Textures/wood.png",
   "color": [
     1,
     1,
