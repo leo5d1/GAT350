@@ -56,8 +56,8 @@ namespace c14
 
         glTexParameteri(m_target, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(m_target, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        glTexParameteri(m_target, GL_TEXTURE_WRAP_S, GL_CLAMP);
-        glTexParameteri(m_target, GL_TEXTURE_WRAP_T, GL_CLAMP);
+        glTexParameteri(m_target, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(m_target, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
         // !! call SDL_FreeSurface with surface as the parameter 
         // !! no need to keep surface after texture is created 

@@ -33,6 +33,10 @@ namespace c14
 		READ_DATA(document, color);
 		READ_DATA(document, shininess);
 
+		// read uvs
+		READ_DATA(document, uv_tiling);
+		READ_DATA(document, uv_offset);
+
 		return true;
 	}
 
@@ -41,6 +45,8 @@ namespace c14
 		m_program->Use();
 		m_program->SetUniform("material.color", color);
 		m_program->SetUniform("material.shininess", shininess);
+		m_program->SetUniform("material.uv_tiling", uv_tiling);
+		m_program->SetUniform("material.uv_offset", uv_offset);
 
 		for (auto& texture : m_textures)
 		{

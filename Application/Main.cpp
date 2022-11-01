@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 	LOG("Window Initialized...");
 
 	// load scene 
-	auto scene = c14::g_resources.Get<c14::Scene>("Scenes/assignment.scn");
+	auto scene = c14::g_resources.Get<c14::Scene>("Scenes/texture.scn");
 
 	bool quit = false;
 	while (!quit)
@@ -28,10 +28,16 @@ int main(int argc, char** argv)
 
 		if (c14::g_inputSystem.GetKeyState(c14::key_escape) == c14::InputSystem::State::Pressed) quit = true;
 
-		auto actor = scene->GetActorFromName("Ogre");
+		/*auto actor = scene->GetActorFromName("Ogre");
 		if (actor)
 		{
 			actor->m_transform.rotation.y += c14::g_time.deltaTime * 90.0f;
+		}*/
+
+		auto material = c14::g_resources.Get<c14::Material>("Materials/multi.mtrl");
+		if (material)
+		{
+			//material->uv_offset.x += c14::g_time.deltaTime;
 		}
 
 		scene->Update();
