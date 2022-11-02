@@ -28,11 +28,11 @@ int main(int argc, char** argv)
 
 		if (c14::g_inputSystem.GetKeyState(c14::key_escape) == c14::InputSystem::State::Pressed) quit = true;
 
-		/*auto actor = scene->GetActorFromName("Ogre");
+		auto actor = scene->GetActorFromName("Ogre");
 		if (actor)
 		{
-			actor->m_transform.rotation.y += c14::g_time.deltaTime * 90.0f;
-		}*/
+			actor->m_transform.rotation.y += c14::g_time.deltaTime * 45.0f;
+		}
 
 		auto material = c14::g_resources.Get<c14::Material>("Materials/multi.mtrl");
 		if (material)

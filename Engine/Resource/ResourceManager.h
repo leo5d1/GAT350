@@ -1,5 +1,6 @@
 #pragma once
 #include "Resource.h"
+#include "Core/Utilities.h"
 #include <map>
 #include <string>
 #include <memory>
@@ -30,16 +31,18 @@ namespace c14
 	template<typename T, typename ... TArgs>
 	inline std::shared_ptr<T> ResourceManager::Get(const std::string& name, TArgs... args)
 	{
-		if (m_resources.find(name) != m_resources.end())
+		std::string lowerName = ToLower(name);
+		if (m_resources.find(lowerName) != m_resources.end())
 		{
-			return std::dynamic_pointer_cast<T> (m_resources[name]);
+			// found
+			return std::dynamic_pointer_cast<T>(m_resources[lowerName]);
 		}
 		else
 		{
 			// not found, create reasource and enter into resources
 			std::shared_ptr<T> resource = std::make_shared<T>();
 			resource->Create(name, args...);
-			m_resources[name] = resource;
+			m_resources[lowerName] = resource;
 
 			return resource;
 		}

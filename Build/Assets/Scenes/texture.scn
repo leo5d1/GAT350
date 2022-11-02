@@ -10,20 +10,20 @@
           0
         ],
         "scale": [
-          6,
-          6,
+          1,
+          1,
           1
         ],
         "rotation": [
           0,
           0,
-          180
+          0
         ]
       },
       "components": [
         {
           "type": "ModelComponent",
-          "model_name": "Models/quad.obj",
+          "model_name": "Models/cube.obj",
           "material_name": "Materials/multi.mtrl"
         }
       ]

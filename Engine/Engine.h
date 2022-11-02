@@ -7,6 +7,7 @@
 #include "Core/File.h"
 #include "Core/Time.h"
 #include "Core/Logger.h"
+#include "Core/Utilities.h"
 
 #include "Math/MathUtils.h"
 #include "Math/Random.h"

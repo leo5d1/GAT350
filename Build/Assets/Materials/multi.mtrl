@@ -1,6 +1,9 @@
 {
   "program": "Shaders/texture_phong.prog",
-  "texture": "Textures/llama.jpg",
+  "textures": [
+    "textures/metal-diffuse.png",
+    "textures/metal-specular.png"
+  ],
   "uv_tiling": [ 1, 1 ],
   "uv_offset": [ 0, 0 ],
   "color": [
@@ -8,5 +11,5 @@
     1,
     1
   ],
-  "shininess": 256
+  "shininess": 16
 }

@@ -1,6 +1,6 @@
 {
   "program": "Shaders/basic.prog",
-  "texture": "Textures/wood.png",
+  "textures": "Textures/wood.png",
   "ambient": [
     1,
     1,

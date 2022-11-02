@@ -21,9 +21,9 @@ namespace c14
 		m_program = c14::g_resources.Get<c14::Program>(program);
 
 		// read the texture name 
-		std::string texture;
-		READ_DATA(document, texture);
-		if (!texture.empty())
+		std::vector<std::string> textures;
+		READ_DATA(document, textures);
+		for(auto texture : textures)
 		{
 			// get texture resource 
 			m_textures.push_back(c14::g_resources.Get<c14::Texture>(texture));
@@ -48,9 +48,10 @@ namespace c14
 		m_program->SetUniform("material.uv_tiling", uv_tiling);
 		m_program->SetUniform("material.uv_offset", uv_offset);
 
-		for (auto& texture : m_textures)
+		for (size_t i = 0; i < m_textures.size(); i++)
 		{
-			texture->Bind();
+			m_textures[i]->SetActive(GL_TEXTURE0 + (int)i);
+			m_textures[i]->Bind();
 		}
 	}
 }
