@@ -31,7 +31,14 @@ int main(int argc, char** argv)
 		auto actor = scene->GetActorFromName("Ogre");
 		if (actor)
 		{
-			actor->m_transform.rotation.y += c14::g_time.deltaTime * 45.0f;
+			//actor->m_transform.rotation.x += c14::g_time.deltaTime * 45.0f;
+			//actor->m_transform.rotation.y += c14::g_time.deltaTime * 45.0f;
+		}
+
+		auto light = scene->GetActorFromName("Light");
+		if (light)
+		{
+			//light->m_transform.rotation.y += c14::g_time.deltaTime * 90.0f;
 		}
 
 		auto material = c14::g_resources.Get<c14::Material>("Materials/multi.mtrl");
