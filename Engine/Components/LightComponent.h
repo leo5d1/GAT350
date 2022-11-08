@@ -3,14 +3,15 @@
 
 namespace c14
 {
-	enum Type {
-		Point,
-		Directional,
-		Spot
-	};
-
 	class LightComponent : public Component
 	{
+	public:
+		enum class Type {
+			Point,
+			Directional,
+			Spot
+		};
+
 	public:
 		CLASS_DECLARATION(LightComponent)
 

@@ -36,6 +36,15 @@
     <Filter Include="Resources\Shaders\normal_phong">
       <UniqueIdentifier>{8c01de5a-be1f-4944-ba32-162c2c59a8d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\Shaders\FX">
+      <UniqueIdentifier>{2a7282aa-0795-488b-92e7-9b52f4d9c631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\Lit">
+      <UniqueIdentifier>{1fdcf14d-3382-4ff2-adb0-a90284600eeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders\Unlit">
+      <UniqueIdentifier>{13616999-f504-438d-875a-54d2c8790bd7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

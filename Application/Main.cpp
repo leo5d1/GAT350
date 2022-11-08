@@ -39,7 +39,7 @@ int main(int argc, char** argv)
 		if (actor)
 		{
 			// move light using sin wave
-			//actor->m_transform.position.y = std::sin(c14::g_time.time);
+			actor->m_transform.position.x  = std::sin(c14::g_time.time) * 2;
 		}
 
 		auto material = c14::g_resources.Get<c14::Material>("Materials/multi.mtrl");
