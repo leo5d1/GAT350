@@ -1,8 +1,8 @@
 {
   "program": "Shaders/texture_phong.prog",
   "textures": [
-    "textures/metal-diffuse.png",
-    "textures/metal-specular.png"
+    "Textures/ogre_diffuse.bmp",
+    "Textures/ogre_normal.bmp"
   ],
   "uv_tiling": [ 1, 1 ],
   "uv_offset": [ 0, 0 ],

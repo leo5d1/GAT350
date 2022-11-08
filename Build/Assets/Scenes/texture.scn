@@ -2,6 +2,34 @@
   "actors": [
     {
       "type": "Actor",
+      "name": "Floor",
+      "transform": {
+        "position": [
+          0,
+          -1,
+          0
+        ],
+        "scale": [
+          2,
+          2,
+          2
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/plane.obj",
+          "material_name": "Materials/multi.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
       "name": "Ogre",
       "transform": {
         "position": [
@@ -24,7 +52,7 @@
         {
           "type": "ModelComponent",
           "model_name": "Models/ogre.obj",
-          "material_name": "Materials/ogre.mtrl"
+          "material_name": "Materials/multi.mtrl"
         }
       ]
     },
@@ -33,10 +61,14 @@
       "name": "Light",
       "transform": {
         "position": [
-          2,
           0,
-          3
-
+          2,
+          0
+        ],
+        "rotation": [
+          85,
+          0,
+          0
         ]
       },
       "components": [
@@ -46,7 +78,10 @@
             1.0,
             1.0,
             1.0
-          ]
+          ],
+          "type_name": "point",
+          "cutoff": 45.0,
+          "exponent": 50.0
         }
       ]
     },

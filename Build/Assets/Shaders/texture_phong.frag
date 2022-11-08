@@ -1,5 +1,9 @@
 #version 430 core
  
+#define POINT  0 
+#define DIRECTIONAL 1 
+#define SPOTLIGHT 2 
+
 in vec3 position;
 in vec3 normal;
 in vec2 texcoord;
@@ -8,9 +12,13 @@ out vec4 fcolor; // pixel to draw
 
 struct Light
  {
+	int type;
 	vec3 ambient;
 	vec3 color;
 	vec4 position;
+	vec3 direction; 
+	float cutoff; 
+	float exponent; 
  };
 
  struct Material
@@ -33,11 +41,22 @@ layout (binding = 1) uniform sampler2D specularMap;
 	ambient = light.ambient * material.color;
 
 	// DIFFUSE
-	// calaculate light direction (unit vector)
-	vec3 light_dir = normalize(vec3(light.position) - position);
+	// direction vector to light 
+	vec3 light_dir = (light.type == DIRECTIONAL) ? normalize(-light.direction) : normalize(vec3(light.position) - position); 
+
+	// if spotlight, compute intensity based on angle to cutoff 
+	float spot_intensity = 1; 
+	if (light.type == SPOTLIGHT) 
+	{ 
+		// get cosine of light direction and direction vector from light 
+		float cosine = dot(light.direction, -light_dir); 
+		// get angle using acos() of the cosine (returns the angle) 
+		float angle = acos(cosine); 
+		spot_intensity = (angle < light.cutoff) ? pow(cosine, light.exponent) : 0; 
+	} 
 
 	// calculate light intensity with dot product (normal * light direction)
-	float intensity = max(dot(light_dir, normal), 0);
+	float intensity = max(dot(light_dir, normal), 0) * spot_intensity; 
 	// calculate diffuse color
 	diffuse = light.color * material.color * intensity;
 
@@ -55,6 +74,8 @@ layout (binding = 1) uniform sampler2D specularMap;
 
 void main()
 {
+	
+
 	vec3 ambient;
 	vec3 diffuse;
 	vec3 specular;

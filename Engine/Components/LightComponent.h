@@ -3,6 +3,12 @@
 
 namespace c14
 {
+	enum Type {
+		Point,
+		Directional,
+		Spot
+	};
+
 	class LightComponent : public Component
 	{
 	public:
@@ -15,5 +21,9 @@ namespace c14
 
 	public:
 		glm::vec3 color{ 0 };
+		Type type = Type::Point;
+
+		float cutoff = 45.0f;
+		float exponent = 50.0f;
 	};
 }

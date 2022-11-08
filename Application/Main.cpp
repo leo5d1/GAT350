@@ -35,10 +35,11 @@ int main(int argc, char** argv)
 			//actor->m_transform.rotation.y += c14::g_time.deltaTime * 45.0f;
 		}
 
-		auto light = scene->GetActorFromName("Light");
-		if (light)
+		actor = scene->GetActorFromName("Light");
+		if (actor)
 		{
-			//light->m_transform.rotation.y += c14::g_time.deltaTime * 90.0f;
+			// move light using sin wave
+			//actor->m_transform.position.y = std::sin(c14::g_time.time);
 		}
 
 		auto material = c14::g_resources.Get<c14::Material>("Materials/multi.mtrl");

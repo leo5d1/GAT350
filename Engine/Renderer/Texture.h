@@ -28,6 +28,8 @@ namespace c14
 		void SetActive(GLuint unit) { glActiveTexture(unit); }
 		void Bind() { glBindTexture(m_target, m_texture); }
 
+		static GLenum GetInternalFormat(GLuint format);
+
 		Vector2 GetSize() const;
 
 		friend class Renderer;
