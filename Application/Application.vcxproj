@@ -170,12 +170,21 @@
     <None Include="..\Build\Assets\Shaders\emissive_phong.frag" />
     <None Include="..\Build\Assets\Shaders\emissive_phong.prog" />
     <None Include="..\Build\Assets\Shaders\emissive_phong.vert" />
-    <None Include="..\Build\Assets\Shaders\normal_phong.frag" />
-    <None Include="..\Build\Assets\Shaders\normal_phong.prog" />
-    <None Include="..\Build\Assets\Shaders\normal_phong.vert" />
-    <None Include="..\Build\Assets\Shaders\texture_phong.frag" />
-    <None Include="..\Build\Assets\Shaders\texture_phong.prog" />
-    <None Include="..\Build\Assets\Shaders\texture_phong.vert" />
+    <None Include="..\Build\Assets\Shaders\FX\toon.frag" />
+    <None Include="..\Build\Assets\Shaders\FX\toon.prog" />
+    <None Include="..\Build\Assets\Shaders\FX\toon.vert" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture.frag" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture.prog" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture.vert" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.frag" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.prog" />
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.vert" />
+    <None Include="..\Build\Assets\Shaders\Unlit\color.frag" />
+    <None Include="..\Build\Assets\Shaders\Unlit\color.prog" />
+    <None Include="..\Build\Assets\Shaders\Unlit\color.vert" />
+    <None Include="..\Build\Assets\Shaders\Unlit\texture.frag" />
+    <None Include="..\Build\Assets\Shaders\Unlit\texture.prog" />
+    <None Include="..\Build\Assets\Shaders\Unlit\texture.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

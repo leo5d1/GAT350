@@ -17,7 +17,7 @@ void main()
 	// create model view mattrix
 	mat4 model_view = view * model;
 	// transfom normals to view space
-	normal = mat3(model_view) * vnormal;
+	normal = normalize(mat3(model_view) * vnormal);
 	// transform position to view space
 	position = vec3(model_view * vec4(vposition, 1));
 	// pass-through texcoord

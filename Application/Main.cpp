@@ -39,14 +39,14 @@ int main(int argc, char** argv)
 		if (actor)
 		{
 			// move light using sin wave
-			actor->m_transform.position.x  = std::sin(c14::g_time.time) * 2;
+			actor->m_transform.position.x  = std::sin(c14::g_time.time);
 		}
 
-		auto material = c14::g_resources.Get<c14::Material>("Materials/multi.mtrl");
-		if (material)
-		{
-			//material->uv_offset.x += c14::g_time.deltaTime;
-		}
+		//auto material = c14::g_resources.Get<c14::Material>("Materials/multi.mtrl");
+		//if (material)
+		//{
+		//	//material->uv_offset.x += c14::g_time.deltaTime;
+		//}
 
 		scene->Update();
 

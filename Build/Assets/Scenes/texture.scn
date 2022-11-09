@@ -51,7 +51,7 @@
             1.0,
             1.0
           ],
-          "type_name": "spot",
+          "type_name": "point",
           "cutoff": 25.0,
           "exponent": 10.0
         }
@@ -81,7 +81,7 @@
         },
         {
           "type": "CameraController",
-          "speed": 4
+          "speed": 2
         }
       ]
     }

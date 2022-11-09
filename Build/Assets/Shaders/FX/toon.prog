@@ -1,0 +1,4 @@
+{
+	"vertex_shader": "shaders/fx/toon.vert",
+	"fragment_shader": "shaders/fx/toon.frag"
+}

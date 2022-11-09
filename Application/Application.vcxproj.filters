@@ -30,12 +30,6 @@
     <Filter Include="Resources\Shaders\emissive_phong">
       <UniqueIdentifier>{afc35a17-9901-47dd-8ac9-f5e0d7acccbf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\Shaders\texture_phong">
-      <UniqueIdentifier>{5542a448-5dce-466d-8273-8d0644f0c6a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resources\Shaders\normal_phong">
-      <UniqueIdentifier>{8c01de5a-be1f-4944-ba32-162c2c59a8d4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resources\Shaders\FX">
       <UniqueIdentifier>{2a7282aa-0795-488b-92e7-9b52f4d9c631}</UniqueIdentifier>
     </Filter>
@@ -115,29 +109,56 @@
     <None Include="..\Build\Assets\Shaders\emissive_phong.vert">
       <Filter>Resources\Shaders\emissive_phong</Filter>
     </None>
-    <None Include="..\Build\Assets\Shaders\texture_phong.vert">
-      <Filter>Resources\Shaders\texture_phong</Filter>
-    </None>
-    <None Include="..\Build\Assets\Shaders\texture_phong.frag">
-      <Filter>Resources\Shaders\texture_phong</Filter>
-    </None>
-    <None Include="..\Build\Assets\Shaders\texture_phong.prog">
-      <Filter>Resources\Shaders\texture_phong</Filter>
-    </None>
     <None Include="..\Build\Assets\Materials\emissive.mtrl">
       <Filter>Resources\Materials</Filter>
     </None>
     <None Include="..\Build\Assets\Scenes\emissive.scn">
       <Filter>Resources\Scenes</Filter>
     </None>
-    <None Include="..\Build\Assets\Shaders\normal_phong.frag">
-      <Filter>Resources\Shaders\normal_phong</Filter>
+    <None Include="..\Build\Assets\Shaders\Lit\texture.frag">
+      <Filter>Resources\Shaders\Lit</Filter>
     </None>
-    <None Include="..\Build\Assets\Shaders\normal_phong.prog">
-      <Filter>Resources\Shaders\normal_phong</Filter>
+    <None Include="..\Build\Assets\Shaders\Lit\texture.prog">
+      <Filter>Resources\Shaders\Lit</Filter>
     </None>
-    <None Include="..\Build\Assets\Shaders\normal_phong.vert">
-      <Filter>Resources\Shaders\normal_phong</Filter>
+    <None Include="..\Build\Assets\Shaders\Lit\texture.vert">
+      <Filter>Resources\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.frag">
+      <Filter>Resources\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.prog">
+      <Filter>Resources\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.vert">
+      <Filter>Resources\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\color.vert">
+      <Filter>Resources\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\color.prog">
+      <Filter>Resources\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\color.frag">
+      <Filter>Resources\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\texture.prog">
+      <Filter>Resources\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\texture.vert">
+      <Filter>Resources\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\texture.frag">
+      <Filter>Resources\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\toon.prog">
+      <Filter>Resources\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\toon.vert">
+      <Filter>Resources\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\toon.frag">
+      <Filter>Resources\Shaders\FX</Filter>
     </None>
   </ItemGroup>
 </Project>
