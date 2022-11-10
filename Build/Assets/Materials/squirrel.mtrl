@@ -1,0 +1,13 @@
+{
+  "program": "shaders/lit/texture_normal.prog",
+  "textures": [
+    "Textures/squirrel_diffuse.png",
+    "Textures/squirrel_normal.png"
+  ],
+  "color": [
+    1,
+    1,
+    1
+  ],
+  "shininess": 32
+}

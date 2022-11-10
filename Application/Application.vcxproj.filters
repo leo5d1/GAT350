@@ -160,5 +160,8 @@
     <None Include="..\Build\Assets\Shaders\FX\toon.frag">
       <Filter>Resources\Shaders\FX</Filter>
     </None>
+    <None Include="..\Build\Assets\Materials\squirrel.mtrl">
+      <Filter>Resources\Materials</Filter>
+    </None>
   </ItemGroup>
 </Project>
