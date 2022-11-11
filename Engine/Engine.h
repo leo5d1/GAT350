@@ -2,6 +2,7 @@
 
 #include "Serialization/Json.h"
 #include "Renderer/Model.h"
+#include "Renderer/GUI.h"
 
 #include "Core/Memory.h"
 #include "Core/File.h"
@@ -63,6 +64,7 @@ namespace c14
 	extern ResourceManager g_resources;
 	extern PhysicsSystem g_physicsSystem;
 	extern EventManager g_eventManager;
+	extern GUI g_gui;
 
 	class Engine : public Singleton<Engine>
 	{

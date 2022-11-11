@@ -10,9 +10,9 @@
           0
         ],
         "scale": [
-          0.5,
-          0.5,
-          0.5
+          1,
+          1,
+          1
         ],
         "rotation": [
           0,
@@ -23,8 +23,8 @@
       "components": [
         {
           "type": "ModelComponent",
-          "model_name": "Models/squirrel.glb",
-          "material_name": "Materials/squirrel.mtrl"
+          "model_name": "Models/ogre.obj",
+          "material_name": "Materials/ogre.mtrl"
         }
       ]
     },

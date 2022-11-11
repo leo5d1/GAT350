@@ -9,6 +9,7 @@ namespace c14
 	ResourceManager g_resources;
 	PhysicsSystem g_physicsSystem;
 	EventManager g_eventManager;
+	GUI g_gui;
 
 	void Engine::Initialize()
 	{
@@ -22,6 +23,12 @@ namespace c14
 
 	void Engine::Update()
 	{
+		SDL_Event event;
+		while (SDL_PollEvent(&event))
+		{
+			g_gui.Update(event);
+		}
+
 		g_time.Tick();
 		g_eventManager.Update();
 		g_physicsSystem.Update();
@@ -38,6 +45,7 @@ namespace c14
 		g_resources.Shutdown();
 		g_inputSystem.Shutdown();
 		g_audio.Shutdown();
+		g_gui.Shutdown();
 		g_renderer.Shutdown();
 	}
 

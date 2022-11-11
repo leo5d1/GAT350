@@ -83,7 +83,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\imgui;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -104,7 +104,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\imgui;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -124,7 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\imgui;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -148,7 +148,7 @@
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Third Party\assimp\include;$(SolutionDir)Third Party\glm;$(SolutionDir)Third Party\glad\include;$(SolutionDir)Third Party\SDL2-2.0.22\include;$(SolutionDir)Third Party\box2d\include;$(SolutionDir)Third Party\rapidjson\include;$(SolutionDir)Third Party\imgui;$(SolutionDir)Third Party\fmod\core\inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -164,6 +164,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Third Party\glad\src\glad.c" />
+    <ClCompile Include="..\Third Party\imgui\imgui.cpp" />
+    <ClCompile Include="..\Third Party\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\Third Party\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\Third Party\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\Third Party\imgui\imgui_impl_sdl.cpp" />
+    <ClCompile Include="..\Third Party\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\Third Party\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Audio\AudioChannel.cpp" />
     <ClCompile Include="Audio\AudioSystem.cpp" />
     <ClCompile Include="Components\AudioComponent.cpp" />
@@ -199,6 +206,7 @@
     <ClCompile Include="Physics\ContactListener.cpp" />
     <ClCompile Include="Physics\PhysicsSystem.cpp" />
     <ClCompile Include="Renderer\Font.cpp" />
+    <ClCompile Include="Renderer\GUI.cpp" />
     <ClCompile Include="Renderer\Material.cpp" />
     <ClCompile Include="Renderer\Model.cpp" />
     <ClCompile Include="Renderer\Program.cpp" />
@@ -211,6 +219,15 @@
     <ClCompile Include="Serialization\Json.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Third Party\imgui\imconfig.h" />
+    <ClInclude Include="..\Third Party\imgui\imgui.h" />
+    <ClInclude Include="..\Third Party\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="..\Third Party\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="..\Third Party\imgui\imgui_impl_sdl.h" />
+    <ClInclude Include="..\Third Party\imgui\imgui_internal.h" />
+    <ClInclude Include="..\Third Party\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\Third Party\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\Third Party\imgui\imstb_truetype.h" />
     <ClInclude Include="Audio\AudioChannel.h" />
     <ClInclude Include="Audio\AudioSystem.h" />
     <ClInclude Include="Components\AudioComponent.h" />
@@ -257,6 +274,7 @@
     <ClInclude Include="Physics\ContactListener.h" />
     <ClInclude Include="Physics\PhysicsSystem.h" />
     <ClInclude Include="Renderer\Font.h" />
+    <ClInclude Include="Renderer\GUI.h" />
     <ClInclude Include="Renderer\Material.h" />
     <ClInclude Include="Renderer\Model.h" />
     <ClInclude Include="Renderer\Program.h" />
