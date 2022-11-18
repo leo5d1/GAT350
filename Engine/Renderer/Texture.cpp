@@ -20,14 +20,11 @@ namespace c14
         // va_start - enables access to variadic function arguments 
         va_start(args, filename);
 
-        // va_arg - accesses the next variadic function arguments 
-        Renderer& renderer = va_arg(args, Renderer);
-
         // va_end - ends traversal of the variadic function arguments 
         va_end(args);
 
         // create texture (returns true/false if successful) 
-        return Load(filename, renderer);
+        return Load(filename);
     }
 
     bool Texture::CreateFromSurface(SDL_Surface* surface, Renderer& renderer)
@@ -35,7 +32,7 @@ namespace c14
         return true;
     }
 
-    bool Texture::Load(const std::string& filename, Renderer& renderer)
+    bool Texture::Load(const std::string& filename)
     {
         // load surface 
         // !! call IMG_Load with c-string of filename 

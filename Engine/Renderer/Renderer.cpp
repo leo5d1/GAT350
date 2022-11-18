@@ -55,7 +55,7 @@ namespace c14
 	void Renderer::BeginFrame()
 	{
 		// changes background color
-		glClearColor(0, 0, 0, 1);
+		glClearColor(clear_color.r, clear_color.g, clear_color.b, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 	

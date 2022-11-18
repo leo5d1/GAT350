@@ -1,0 +1,11 @@
+{
+  "program": "shaders/fx/skybox.prog",
+  "cubemap": "textures/GamlaStan/",
+  "cubemap_extension":  ".jpg",
+  "color": [
+    1,
+    1,
+    1
+  ],
+  "shininess": 32
+}

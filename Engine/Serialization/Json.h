@@ -5,6 +5,7 @@
 #include <vector>
 
 #define READ_DATA(value, data) c14::json::Get(value, #data, data)
+#define READ_NAME_DATA(value, name, data) c14::json::Get(value, name, data) 
 
 namespace c14
 {

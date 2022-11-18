@@ -209,6 +209,9 @@
     <ClCompile Include="Renderer\GUI.cpp">
       <Filter>Source\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="Renderer\CubemapTexture.cpp">
+      <Filter>Source\Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\MathUtils.h">
@@ -413,6 +416,9 @@
       <Filter>Source\External\imgui</Filter>
     </ClInclude>
     <ClInclude Include="Renderer\GUI.h">
+      <Filter>Source\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\CubemapTexture.h">
       <Filter>Source\Renderer</Filter>
     </ClInclude>
   </ItemGroup>

@@ -27,7 +27,6 @@ namespace c14
 		void CreateWindow(const char* name, int width, int height, bool fullscreen);
 		void BeginFrame();
 		void EndFrame();
-		void setClearColor(const Color color) { m_clearColor = color; }
 
 		void DrawLine(float x1, float y1, float x2, float y2);
 		void DrawLine(const Vector2& v1, const Vector2& v2, const Color& color);
@@ -55,13 +54,15 @@ namespace c14
 		int m_width = 0;
 		int m_height = 0;
 
-		Color m_clearColor { 0, 0, 0, 255 };
-
 		SDL_Renderer* m_renderer = nullptr;
 		SDL_Window* m_window = nullptr;
 		SDL_GLContext m_context;
 
 		glm::mat4 m_view{ 1 };
 		glm::mat4 m_projection{ 1 };
+		
+	public:
+		glm::vec3 clear_color{ 0, 0, 0 };
+		glm::vec3 ambient_color{ 0, 0, 0 };
 	};	
 }

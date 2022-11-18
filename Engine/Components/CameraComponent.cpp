@@ -9,6 +9,13 @@ namespace c14
 		m_view = glm::lookAt(m_owner->m_transform.position, m_owner -> m_transform.position + m_owner->m_transform.getForward(), glm::vec3{ 0, 1, 0 });
 	}
 
+	void CameraComponent::SetProgram(std::shared_ptr<Program> program)
+	{
+		program->Use();
+		program->SetUniform("view", m_view);
+		program->SetUniform("projection", m_projection);
+	}
+
 	void CameraComponent::SetPerspective(float fov, float aspectRatio, float near,
 		float far)
 	{

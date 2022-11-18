@@ -1,0 +1,13 @@
+{
+  "program": "shaders/lit/texture_normal.prog",
+  "textures": [
+    "Textures/rocks.jpg",
+    "Textures/rocks_normal.jpg"
+  ],
+  "color": [
+    1,
+    1,
+    1
+  ],
+  "shininess": 32
+}

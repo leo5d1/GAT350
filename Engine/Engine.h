@@ -43,6 +43,7 @@
 #include "Renderer/Text.h"
 #include "Renderer/Font.h"
 #include "Renderer/Texture.h"
+#include "Renderer/CubemapTexture.h"
 #include "Renderer/Shader.h"
 #include "Renderer/Program.h"
 #include "Renderer/Material.h"
