@@ -24,6 +24,9 @@ namespace c14
 		template <typename T>
 		std::vector<std::shared_ptr<T>> Get();
 
+		template <typename T>
+		void Add(const std::string& name, std::shared_ptr<T> resource);
+
 	private:
 		std::map<std::string, std::shared_ptr<Resource>> m_resources;
 	};
@@ -65,5 +68,11 @@ namespace c14
 		}
 
 		return result;
+	}
+	template<typename T>
+	inline void ResourceManager::Add(const std::string& name, std::shared_ptr<T> resource)
+	{
+		std::string lowerName = ToLower(name);
+		m_resources[lowerName] = resource;
 	}
 }

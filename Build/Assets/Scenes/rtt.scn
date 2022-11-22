@@ -1,0 +1,213 @@
+{
+  "clear_color": [ 0, 0, 0 ],
+  "ambient_color": [ 0.2, 0.2, 0.2 ],
+  "actors": [
+    {
+      "type": "Actor",
+      "name": "Skybox",
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/cube.obj",
+          "material_name": "Materials/skybox.mtrl",
+          "depth_test": false
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Model",
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/ogre.obj",
+          "material_name": "Materials/ogre.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "RTT",
+      "transform": {
+        "position": [
+          3,
+          2,
+          0
+        ],
+        "scale": [
+          3,
+          3,
+          3
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/sphere.obj",
+          "material_name": "Materials/rtt.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Ground",
+      "transform": {
+        "position": [
+          0,
+          -1,
+          0
+        ],
+        "scale": [
+          10,
+          1,
+          10
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/plane.obj",
+          "material_name": "Materials/ground.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Light",
+      "transform": {
+        "position": [
+          0,
+          3,
+          1
+        ],
+        "rotation": [
+          85,
+          0,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "LightComponent",
+          "color": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "type_name": "point",
+          "cutoff": 25.0,
+          "exponent": 10.0
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Light2",
+      "transform": {
+        "position": [
+          -3,
+          3,
+          1
+        ],
+        "rotation": [
+          85,
+          0,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "LightComponent",
+          "color": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "type_name": "point",
+          "cutoff": 25.0,
+          "exponent": 10.0
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Light3",
+      "transform": {
+        "position": [
+          3,
+          3,
+          1
+        ],
+        "rotation": [
+          85,
+          0,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "LightComponent",
+          "color": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "type_name": "point",
+          "cutoff": 25.0,
+          "exponent": 10.0
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Camera",
+      "transform": {
+        "position": [
+          0,
+          0,
+          4
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "CameraComponent",
+          "fov": 45,
+          "near": 0.1,
+          "far": 100
+        },
+        {
+          "type": "CameraController",
+          "speed": 2,
+          "sensitivity": 0.2
+        }
+      ]
+    }
+  ]
+}

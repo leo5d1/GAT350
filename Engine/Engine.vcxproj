@@ -207,6 +207,7 @@
     <ClCompile Include="Physics\PhysicsSystem.cpp" />
     <ClCompile Include="Renderer\CubemapTexture.cpp" />
     <ClCompile Include="Renderer\Font.cpp" />
+    <ClCompile Include="Renderer\Framebuffer.cpp" />
     <ClCompile Include="Renderer\GUI.cpp" />
     <ClCompile Include="Renderer\Material.cpp" />
     <ClCompile Include="Renderer\Model.cpp" />
@@ -276,6 +277,7 @@
     <ClInclude Include="Physics\PhysicsSystem.h" />
     <ClInclude Include="Renderer\CubemapTexture.h" />
     <ClInclude Include="Renderer\Font.h" />
+    <ClInclude Include="Renderer\Framebuffer.h" />
     <ClInclude Include="Renderer\GUI.h" />
     <ClInclude Include="Renderer\Material.h" />
     <ClInclude Include="Renderer\Model.h" />

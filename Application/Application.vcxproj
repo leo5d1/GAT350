@@ -155,6 +155,7 @@
     <None Include="..\Build\Assets\Materials\ogre.mtrl" />
     <None Include="..\Build\Assets\Materials\reflection.mtrl" />
     <None Include="..\Build\Assets\Materials\refraction.mtrl" />
+    <None Include="..\Build\Assets\Materials\rtt.mtrl" />
     <None Include="..\Build\Assets\Materials\skybox.mtrl" />
     <None Include="..\Build\Assets\Materials\spot.mtrl" />
     <None Include="..\Build\Assets\Materials\squirrel.mtrl" />
@@ -163,6 +164,7 @@
     <None Include="..\Build\Assets\Scenes\basic_Lit.scn" />
     <None Include="..\Build\Assets\Scenes\Cubemap.scn" />
     <None Include="..\Build\Assets\Scenes\emissive.scn" />
+    <None Include="..\Build\Assets\Scenes\rtt.scn" />
     <None Include="..\Build\Assets\Scenes\texture.scn" />
     <None Include="..\Build\Assets\Shaders\basic.frag" />
     <None Include="..\Build\Assets\Shaders\basic.prog" />

@@ -18,8 +18,18 @@ int main(int argc, char** argv)
 
 	c14::g_gui.Initialize(c14::g_renderer);
 
+	// create framebuffer texture
+	auto texture = std::make_shared<c14::Texture>();
+	texture->CreateTexture(512, 512);
+	c14::g_resources.Add<c14::Texture>("fb_texture", texture);
+
+	// create framebuffer
+	auto framebuffer = c14::g_resources.Get<c14::Framebuffer>("framebuffer", "fb_texture");
+	framebuffer->Unbind();
+
+
 	// load scene 
-	auto scene = c14::g_resources.Get<c14::Scene>("Scenes/cubemap.scn");
+	auto scene = c14::g_resources.Get<c14::Scene>("Scenes/rtt.scn");
 
 	glm::vec3 pos{ 0, 0, 0 };
 	glm::vec3 rot{ 0, 0, 0 };
@@ -43,7 +53,7 @@ int main(int argc, char** argv)
 		if (actor)
 		{
 			// move light using sin wave
-			actor->m_transform.position = pos;
+			//actor->m_transform.position = pos;
 		}
 
 		auto program = c14::g_resources.Get<c14::Program>("shaders/fx/refraction.prog");
@@ -62,10 +72,36 @@ int main(int argc, char** argv)
 
 		scene->Update();
 
-		c14::g_renderer.BeginFrame();
+		{
+			auto actor = scene->GetActorFromName("RTT");
+			if (actor)
+			{
+				actor->SetActive(false);
+			}
+		}
 
+		//render pass 1 (render to framebuffer)
+		glViewport(0, 0, 512, 512);
+		framebuffer->Bind();
+		c14::g_renderer.BeginFrame();
 		scene->PreRender(c14::g_renderer);
 		scene->Render(c14::g_renderer);
+		framebuffer->Unbind();
+
+		{
+			auto actor = scene->GetActorFromName("RTT");
+			if (actor)
+			{
+				actor->SetActive(true);
+			}
+		}
+
+		// render pass 2 (render to screen)
+		glViewport(0, 0, 800, 600);
+		c14::g_renderer.BeginFrame();
+		scene->PreRender(c14::g_renderer);
+		scene->Render(c14::g_renderer);
+
 		c14::g_gui.Draw();
 
 		c14::g_renderer.EndFrame();

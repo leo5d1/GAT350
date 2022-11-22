@@ -48,6 +48,7 @@
 #include "Renderer/Program.h"
 #include "Renderer/Material.h"
 #include "Renderer/VertexBuffer.h"
+#include "Renderer/Framebuffer.h"
 
 #include "glm/glm.hpp"
 
