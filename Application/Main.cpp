@@ -2,6 +2,8 @@
 #include <vector>
 #include <iostream>
 
+#define POST_PROCESS
+
 int main(int argc, char** argv)
 {
 	LOG("Application Started...");
@@ -20,7 +22,7 @@ int main(int argc, char** argv)
 
 	// create framebuffer texture
 	auto texture = std::make_shared<c14::Texture>();
-	texture->CreateTexture(512, 512);
+	texture->CreateTexture(1024, 1024);
 	c14::g_resources.Add<c14::Texture>("fb_texture", texture);
 
 	// create framebuffer
@@ -64,6 +66,13 @@ int main(int argc, char** argv)
 			program->SetUniform("ri", ri);
 		}
 
+		/*auto program = c14::g_resources.Get<c14::Program>("shaders/postprocess/postprocess.prog");
+		if (program)
+		{
+			program->Use();
+			program->SetUniform("offset", c14::g_time.time);
+		}*/
+
 		ImGui::Begin("Controls");
 		//ImGui::SliderFloat3("Position", &pos[0], -5.0f, 5.0f);
 		ImGui::DragFloat3("Rotation", &rot[0]);
@@ -72,35 +81,42 @@ int main(int argc, char** argv)
 
 		scene->Update();
 
+#ifdef POST_PROCESS 
+		// don't draw post process actor when rendering to the framebuffer 
 		{
-			auto actor = scene->GetActorFromName("RTT");
+			auto actor = scene->GetActorFromName("PostProcess");
 			if (actor)
 			{
 				actor->SetActive(false);
 			}
 		}
-
-		//render pass 1 (render to framebuffer)
-		glViewport(0, 0, 512, 512);
+		// render pass 1 (render scene to framebuffer) 
+		c14::g_renderer.SetViewport(0, 0, framebuffer -> GetSize().x, framebuffer->GetSize().y);
 		framebuffer->Bind();
 		c14::g_renderer.BeginFrame();
 		scene->PreRender(c14::g_renderer);
 		scene->Render(c14::g_renderer);
 		framebuffer->Unbind();
 
+		// render pass 2 (render to screen) 
+		c14::g_renderer.RestoreViewport();
+		c14::g_renderer.BeginFrame();
+		scene->PreRender(c14::g_renderer);
+
+		// draw only the post process actor to the screen 
 		{
-			auto actor = scene->GetActorFromName("RTT");
+			auto actor = scene->GetActorFromName("PostProcess");
 			if (actor)
 			{
 				actor->SetActive(true);
+				actor->Draw(c14::g_renderer);
 			}
 		}
-
-		// render pass 2 (render to screen)
-		glViewport(0, 0, 800, 600);
+#else 
 		c14::g_renderer.BeginFrame();
 		scene->PreRender(c14::g_renderer);
 		scene->Render(c14::g_renderer);
+#endif // POST_PROCESS 
 
 		c14::g_gui.Draw();
 

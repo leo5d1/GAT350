@@ -16,6 +16,29 @@
     },
     {
       "type": "Actor",
+      "name": "PostProcess",
+      "transform": {
+        "position": [
+          3,
+          2,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/quad.obj",
+          "material_name": "Materials/postprocess.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
       "name": "Model",
       "transform": {
         "position": [
@@ -39,29 +62,6 @@
           "type": "ModelComponent",
           "model_name": "Models/ogre.obj",
           "material_name": "Materials/ogre.mtrl"
-        }
-      ]
-    },
-    {
-      "type": "Actor",
-      "name": "RTT",
-      "transform": {
-        "position": [
-          3,
-          2,
-          0
-        ],
-        "scale": [
-          3,
-          3,
-          3
-        ]
-      },
-      "components": [
-        {
-          "type": "ModelComponent",
-          "model_name": "Models/sphere.obj",
-          "material_name": "Materials/rtt.mtrl"
         }
       ]
     },
